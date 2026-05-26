@@ -1,0 +1,126 @@
+#header {
+  width: 100%;
+  background-color: rgba(245, 245, 245, 0.144);
+  backdrop-filter: blur(6px);
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+#tema{
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.logo {
+  max-height: 90px;
+  width: auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* ── Nav desktop ── */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  color: #34495e;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+}
+
+.nav-links li:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #1a2e45;
+}
+
+
+/* ── Botón hamburguesa ── */
+#menu {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+#menu:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  #header {
+    padding: 10px 20px;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(245, 245, 245, 0.97);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  /* Se activa con JS */
+  .nav.activo {
+    max-height: 400px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 0;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+}
